@@ -156,5 +156,5 @@ Because when using typed properties on existing entities for example, every chec
 But in the end it will be worth it, resulting in a clearer and stricter interface.
 
 ## Problems
-### PHPUnit
+### PHPUnit & Symfony Dependency Injection
 PHPUnit has a setUp method which is called before running a test, when using dependency injection in this method for our test class from symfony container, the property in the test class has to be nullable, even though when actual test functions are executed the property will be the instance and not null.
