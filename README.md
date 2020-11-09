@@ -27,6 +27,8 @@ Instead the check needs to be the following:
     $this->assertTrue(isset($car->model));
 This forces us to be very clear in what the property can hold, and if it actually should be nullable.
 
+Also its worth mentioning that `unset()` will return the property to its uninitialized state.
+
 ## Designing entities with typed properties
 
 With the previous information in mind and the will to actually use typed properties the Car class could look like this:
@@ -156,5 +158,5 @@ Because when using typed properties on existing entities for example, every chec
 But in the end it will be worth it, resulting in a clearer and stricter interface.
 
 ## Problems
-### PHPUnit & Symfony Dependency Injection
+### PHPUnit & Symfony Dependency 
 PHPUnit has a setUp method which is called before running a test, when using dependency injection in this method for our test class from symfony container, the property in the test class has to be nullable, even though when actual test functions are executed the property will be the instance and not null.
